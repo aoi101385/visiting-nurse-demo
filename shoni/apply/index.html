@@ -50,9 +50,9 @@ section[id],div[id]{scroll-margin-top:110px}
 .gnav a{color:var(--ink);text-decoration:none;font-size:14px;font-weight:700;padding:8px 12px;border-radius:999px;white-space:nowrap}
 .gnav a:hover{background:var(--cream2)}
 .hr{display:flex;align-items:center;gap:10px;flex:none}
-.pill{display:inline-block;background:var(--coral);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:10px 24px;border-radius:999px;border:0;cursor:pointer;font-family:inherit;line-height:1.6}
+.pill{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;height:48px;background:var(--coral);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:0 26px;border-radius:999px;border:2px solid var(--coral);cursor:pointer;font-family:inherit;line-height:1}
 .pill:hover{background:#c9452e}
-.pill.ghost{background:var(--white);color:var(--coral);border:2px solid var(--coral);padding:8px 22px}
+.pill.ghost{background:var(--white);color:var(--coral);border:2px solid var(--coral);padding:0 24px}
 .bdg{background:var(--yellow);color:var(--ink);font-weight:700;font-size:12.5px;padding:5px 14px;border-radius:999px;white-space:nowrap}
 .menubtn{display:none;font:inherit;font-size:13px;font-weight:700;background:var(--yellow);color:var(--ink);border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
 .ov{display:none;position:fixed;inset:0;background:var(--cream);z-index:50;overflow:auto}
@@ -64,7 +64,7 @@ section[id],div[id]{scroll-margin-top:110px}
 @media(max-width:1180px){.gnav{display:none}.menubtn{display:inline-block}.hr{margin-left:auto}}
 @media(max-width:1420px){.bdg{display:none}}
 @media(max-width:560px){.hr .pill{display:none}.brand{font-size:14px}}
-@media(max-width:700px){.top .in{border-radius:32px;padding:10px 12px 10px 16px}.brand{font-size:15px}.brand small{display:none}.pill{padding:8px 16px;font-size:14px}}
+@media(max-width:700px){.top .in{border-radius:32px;padding:10px 12px 10px 16px}.brand{font-size:15px}.brand small{display:none}.pill{padding:0 18px;font-size:14px;height:44px}}
 /* ヒーロー */
 .hero{position:relative;overflow:hidden;padding:40px 0 70px}
 .hero-in{display:grid;grid-template-columns:1.05fr 1fr;gap:30px;align-items:center;position:relative;z-index:2}
@@ -148,6 +148,7 @@ section[id],div[id]{scroll-margin-top:110px}
 .qa summary::before{content:'Q';flex:none;width:32px;height:32px;border-radius:50%;background:var(--coral);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
 .qa summary h3{font-size:17px}
 .qa details p{padding:0 0 16px 44px;color:var(--sub)}
+.steps.s5{grid-template-columns:repeat(5,1fr)}@media(max-width:1100px){.steps.s5{grid-template-columns:1fr 1fr}}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
 .st{background:var(--white);border-radius:28px;padding:26px 22px;position:relative}
 .st .num{display:inline-flex;width:38px;height:38px;border-radius:50%;background:var(--yellow);font-weight:700;align-items:center;justify-content:center;margin-bottom:10px}
@@ -167,7 +168,7 @@ section[id],div[id]{scroll-margin-top:110px}
 .prof p{font-size:14.5px;color:var(--sub)}
 .nums2{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .nums2 .nb{background:var(--white);border-radius:50%;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px;border:4px solid var(--c)}
-.nums2 .nb b{font-size:clamp(40px,5.4vw,66px);line-height:1.1;color:var(--ink)}
+.nums2 .nb b{font-size:clamp(30px,3.9vw,50px);line-height:1.1;color:var(--ink)}
 .nums2 .nb b small{font-size:.32em;margin-left:2px}
 .nums2 .nb b{display:block;margin-bottom:8px}.nums2 .nb span{font-size:14px;color:var(--sub);line-height:1.4;display:block}@media(max-width:700px){.nums2 .nb b{font-size:36px}.nums2 .nb span{font-size:12.5px}}
 .js .nums2 .nb{transform:scale(.3);opacity:0}
@@ -193,7 +194,7 @@ input,select,textarea{font:inherit;width:100%;max-width:640px;padding:12px 18px;
 .ctb p.m{font-size:19px;font-weight:700;margin-bottom:20px}
 .ctb .btns{justify-content:center}
 .ctb p a:not(.pill){color:var(--ink);font-weight:700}
-.ctb .tel{font-size:30px;font-weight:700;color:var(--ink);text-decoration:none;background:var(--white);border-radius:999px;padding:6px 30px;display:inline-block;line-height:1.6}
+.ctb .tel{font-size:30px;font-weight:700;color:var(--ink);text-decoration:none;background:var(--white);border-radius:999px;padding:0 30px;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;height:48px;line-height:1}.ctb .btns{align-items:center}
 footer{background:var(--mint);padding:0 0 30px}
 footer .wrap{padding-top:6px}
 footer .cols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:26px;padding:26px 0}
@@ -207,12 +208,163 @@ footer .bot{font-size:12px;color:var(--sub);border-top:2px dotted #8fc7b0;paddin
 .js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .js .rv.shown{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.js .nums2 .nb{transform:none;opacity:1;animation:none!important}}
+
+body{background:#e4f4ec}
+.page{max-width:1300px;margin:16px auto 40px;background:var(--cream);border-radius:44px;overflow:clip;box-shadow:0 12px 44px rgba(60,110,85,.16);position:relative}
+.note{background:transparent}
+.top{position:sticky;top:0;z-index:30;margin:0;max-width:none;padding:0}
+.top .in{border-radius:0 0 32px 32px;background:#fef7ed;box-shadow:0 8px 22px rgba(120,80,40,.10);padding:14px 36px;gap:22px}
+.brand{gap:12px;font-weight:700}
+.bn{font-size:30px;line-height:1.1;letter-spacing:.06em;color:var(--coral)}
+.bn small{display:block;font-size:12px;letter-spacing:.04em;color:var(--ink);font-weight:700;margin-top:2px}
+.mk{width:56px;height:52px}
+.gnav a{font-size:15px;padding:8px 14px}
+.cta2{display:flex;align-items:center;gap:10px;background:var(--coral);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:6px 6px 6px 28px;white-space:nowrap}
+.cta2 i{font-style:normal;background:var(--yellow);color:var(--ink);font-size:11.5px;line-height:1.25;text-align:center;padding:6px 14px;border-radius:999px}
+@media(max-width:1100px){.gnav{display:none}.menubtn{display:inline-block}.hr{margin-left:auto}}
+@media(max-width:700px){.top .in{padding:10px 14px;border-radius:0 0 24px 24px}.brand .ph.lg{width:160px;height:55px}.bn{font-size:22px}.bn small{font-size:10px}.mk{width:44px;height:40px}.cta2{display:none}.page{margin:0;border-radius:0}}
+.hero2{position:relative;min-height:560px;overflow:hidden}
+.hp{position:absolute;right:0;top:0;width:62%;height:100%}
+.hp .ph{clip-path:url(#hc);border-radius:0;background:#fff0c4;box-shadow:none}
+.hero2 .wrap{position:relative;z-index:3;height:100%;min-height:560px;display:flex;align-items:center;padding:0 48px}
+.ht{max-width:560px;padding:40px 0 70px}
+.ht h1{font-size:clamp(28px,3.3vw,44px);line-height:1.5;margin-bottom:22px}
+.ht .sub{font-size:clamp(16px,1.6vw,20px);font-weight:700;line-height:1.9;margin-bottom:26px}
+.bub2{position:absolute;z-index:4;left:47%;top:48px;width:96px;height:96px;border-radius:50% 50% 50% 8%;background:var(--yellow);display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:14.5px;line-height:1.35;color:var(--ink)}
+.bub3{position:absolute;z-index:4;right:36px;bottom:46px;background:var(--yellow);font-weight:700;padding:8px 26px;border-radius:999px;color:var(--ink);font-size:15px}
+.hd{position:absolute;pointer-events:none}.brand .ph.lg{width:215px;height:74px;background:transparent;box-shadow:none;border-radius:0}.brand .ph.lg img{object-fit:contain}.fc .ph img,.hp .ph img{object-fit:cover}
+@media(max-width:900px){.hero2{min-height:0}.hp{position:relative;width:100%;height:300px}.hero2 .wrap{min-height:0;padding:0 24px}.ht{padding:24px 0 60px}.bub2{left:auto;right:20px;top:20px;width:80px;height:80px;font-size:12px}.bub3{right:18px;bottom:auto;top:240px;font-size:13px}.hd{display:none}}
+.intro{max-width:760px;margin:0 auto;padding:6px 24px 0;text-align:center}
+.intro .answer{font-size:14px;color:var(--sub);line-height:1.9}
+.sh .en{display:none}
+.sh h2{font-size:clamp(22px,2.6vw,30px)}
+.sec{padding:60px 0}
+.fcards{max-width:940px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.fc{background:#fff;border-radius:40px;padding:28px 22px 30px;text-align:center;border:3px solid var(--c);box-shadow:0 0 0 7px color-mix(in srgb,var(--c) 28%,transparent),0 14px 28px rgba(120,80,40,.10)}
+.fc .ph{width:130px;height:130px;border-radius:50%;margin:0 auto 14px;background:var(--cream2)}
+.fc h3{font-size:19px;line-height:1.5;margin-bottom:10px}
+.fc .ph figcaption{font-size:11px;padding:8px;line-height:1.5}.fc p{font-size:14.5px;color:var(--sub);text-align:left}
+@media(max-width:900px){.fcards{grid-template-columns:1fr;max-width:420px}}
+.vals{position:relative;padding:50px 0 70px;overflow:hidden}
+.vals svg.bg{position:absolute;left:0;top:0;width:100%;height:100%;z-index:0}
+.vals .wrap{position:relative;z-index:1}
+.vrow{display:grid;grid-template-columns:1.05fr 1fr;gap:30px;align-items:center;margin-top:10px}
+.vph .ph{aspect-ratio:1.6/1;border-radius:46% 54% 42% 58% / 58% 46% 54% 42%;background:#fff;max-width:520px;margin-left:auto}
+.vq{padding:10px 20px}
+.vq q{display:block;quotes:none;font-size:clamp(20px,2.3vw,28px);font-weight:700;line-height:1.7}
+.vq q::before{content:"\201C";font-size:1.5em;margin-right:6px;vertical-align:-.25em}
+.vq q::after{content:"\201D";font-size:1.5em;margin-left:6px;vertical-align:-.45em}
+.vq p{margin-top:14px;font-size:15px;color:var(--ink)}
+.vq cite{display:block;margin-top:10px;font-size:13.5px;font-style:normal;color:var(--sub)}
+@media(max-width:900px){.vrow{grid-template-columns:1fr}.vph .ph{margin:0 auto}.vals svg.bg{height:92%}}
+.zz{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:1000px;margin:0 auto;align-items:start}
+.zz .it{text-align:center;position:relative;padding:0 8px}
+.zz .it:nth-child(even){margin-top:64px}
+.zz .it:not(:last-child)::after{content:"\2198";position:absolute;right:-16px;top:56px;font-size:30px;color:#9b8878}
+.zz .it:nth-child(even):not(:last-child)::after{content:"\2197";top:42px}
+.zz .cir{width:150px;height:150px;margin:0 auto 14px;border-radius:52% 48% 55% 45% / 50% 54% 46% 50%;background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.55),rgba(255,255,255,0) 60%),var(--b);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.3}
+.zz .cir b{font-size:28px;font-weight:700;color:var(--ink);display:block;margin-bottom:6px;line-height:1.2}.zz .cir span{display:block}
+.zz .cir span{font-size:16px;font-weight:700;padding:0 10px}
+.zz p{font-size:14px;color:var(--sub);text-align:left}
+@media(max-width:900px){.zz{grid-template-columns:1fr 1fr}.zz .it:nth-child(even){margin-top:0}.zz .it::after{display:none}}
+@media(max-width:560px){.zz{grid-template-columns:1fr}}
+.ncs{max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.nc{background:#fff;border-radius:28px;padding:20px 22px;display:grid;grid-template-columns:1fr 64px;gap:12px;align-items:end;text-decoration:none;color:var(--ink);box-shadow:0 8px 22px rgba(120,80,40,.10)}
+.nc:hover{box-shadow:0 10px 26px rgba(120,80,40,.2)}
+.nc time{font-size:12.5px;color:var(--sub)}
+.nc .t{font-size:11.5px;font-weight:700;background:var(--mint);color:var(--mint-d);padding:1px 10px;border-radius:999px;margin-left:6px}
+.nc b{display:block;font-size:16px;line-height:1.6;margin-top:6px}
+.nc .dot{width:64px;height:64px;border-radius:50%;background:var(--c);display:flex;align-items:center;justify-content:center}
+.nc .dot svg{width:30px;height:30px}
+@media(max-width:900px){.ncs{grid-template-columns:1fr}}
+footer{background:none;padding:0;position:relative}.fbody{background:#cfe9d8;color:#4a3a32}
+footer .hill{display:block;width:100%;height:auto;line-height:0;margin-bottom:-2px}
+footer .wrap{padding-top:0;position:relative}.brand .ph.lg,footer .lg2 .ph.lg{background:transparent}footer .lg2{width:auto}
+footer .bn{color:#a8402c;display:block;font-size:20px;white-space:nowrap}footer .bn small{display:block;font-size:11.5px;letter-spacing:.04em;white-space:nowrap}footer .lg2{flex:none;display:flex;align-items:center;gap:10px}footer .frow .brand{flex-direction:row;align-items:center;gap:10px}footer .frow .mk{width:52px;height:48px}footer .fbody{margin-top:-4px;position:relative;box-shadow:0 -4px 0 #cfe9d8}footer .frow .ad{margin-left:34px}footer .hill{margin-bottom:0}footer .brand{color:#4a3a32}footer .bn small{color:#4a3a32}
+footer .fname{text-align:center;font-size:24px;font-weight:700;margin:6px 0 18px}
+footer .frow{display:flex;gap:36px;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+footer .frow .ad{font-size:14px;line-height:1.8}
+footer .frow .tel{font-size:28px;font-weight:700;color:var(--ink);text-decoration:none}
+footer .cols{grid-template-columns:repeat(3,1fr);padding:14px 0 10px;border-top:2px dotted #8fc7b0}
+footer .bot{background:#9fd3b6;margin:0 -24px;padding:12px 24px;text-align:center;border-top:0}
+@media(max-width:700px){footer .cols{grid-template-columns:1fr}}
+.ctb{background:transparent;padding:30px 0 40px}
+.ctb .wrap{background:#fff;border-radius:44px;padding:36px 24px;max-width:960px;box-shadow:0 10px 26px rgba(120,80,40,.10)}
+.ptitle{margin-top:0;background:linear-gradient(#ffeaa8,#fff3cc)}
+.card,.job,.st{box-shadow:0 8px 22px rgba(120,80,40,.08)}
+.card{border-width:3px;border-radius:34px}
+
+.zz2{position:relative;max-width:760px;height:340px;margin:0 auto}
+.zz2 .cr{position:absolute;width:150px;height:150px;border-radius:52% 48% 55% 45% / 50% 54% 46% 50%;background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.55),rgba(255,255,255,0) 60%),var(--b);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.35}
+.zz2 .cr b{font-size:30px;line-height:1.2;display:block;margin-bottom:4px}
+.zz2 .cr span{font-size:16px;font-weight:700;padding:0 14px;display:block}
+.zz2 img{position:absolute;mix-blend-mode:multiply;height:auto}
+.zz2 .ar{position:absolute;font-size:30px;color:#9b8878;line-height:1}
+@media(max-width:760px){.zz2{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:18px;justify-items:center}.zz2 .cr{position:static}.zz2 img,.zz2 .ar{display:none}}
+.ncs2{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.nc2{background:#fff;border-radius:28px;padding:20px 22px;display:grid;grid-template-columns:1fr 84px;gap:12px;align-items:center;text-decoration:none;color:var(--ink);box-shadow:0 8px 22px rgba(120,80,40,.10)}
+.nc2:hover{box-shadow:0 10px 26px rgba(120,80,40,.2)}
+.nc2 time{font-size:12.5px;color:var(--sub)}
+.nc2 .t{font-size:11.5px;font-weight:700;background:var(--mint);color:var(--mint-d);padding:1px 10px;border-radius:999px;margin-left:6px}
+.nc2 b{display:block;font-size:17px;line-height:1.6;margin-top:6px}
+.nc2 img{width:84px;height:84px;object-fit:cover;border-radius:18px}
+@media(max-width:760px){.ncs2{grid-template-columns:1fr}}
+footer .lg2{width:130px}
+footer .lg2 img{width:100%;height:auto;mix-blend-mode:multiply}
+footer .an{position:absolute;right:30px;bottom:48px;width:110px;mix-blend-mode:multiply}
+footer .an img{width:100%;height:auto}
+@media(max-width:900px){footer .an{display:none}}
+
+:root{--cream:#fdf6ec}
+.page{background:#fdf6ec}
+.bgl{position:absolute;pointer-events:none;z-index:0}
+.hs{left:0;top:0;width:340px;height:100px;background:url(/visiting-nurse-demo/shoni/images/bg_sky.jpg) no-repeat left top/340px auto}
+.hh{left:0;bottom:0;width:400px;height:186px;background:url(/visiting-nurse-demo/shoni/images/bg_hills.jpg) no-repeat left bottom/400px auto}
+.hg{right:0;top:0;width:230px;height:48px;background:url(/visiting-nurse-demo/shoni/images/bg_gtr.jpg) no-repeat right top/230px auto}
+.sec,.vals,.hero2,.ptitle,.ctb{position:relative}
+.sec>.wrap,.ptitle>.wrap,.ctb>.wrap{position:relative;z-index:1}
+.ptitle .hs{height:100px}
+@media(max-width:700px){.hs{width:200px;background-size:200px auto}.hh{width:240px;background-size:240px auto}.hg{width:140px;background-size:140px auto}}
+.fcol{position:relative;overflow:visible}
+.fcol .bgl{z-index:0}
+.thb{width:84px;height:84px;border-radius:22px;background:var(--c);display:flex;align-items:center;justify-content:center;font-size:10.5px;letter-spacing:.14em;font-weight:700;color:#fff}
+.nc2 .thb{width:84px;height:84px;aspect-ratio:auto;border-radius:22px;flex:none;margin:0}.nc2 .thb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.zz2{position:relative;max-width:760px;height:340px;margin:0 auto}
+.zz2 .cr{position:absolute;width:150px;height:150px;border-radius:52% 48% 55% 45% / 50% 54% 46% 50%;background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.55),rgba(255,255,255,0) 60%),var(--b);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.35}
+.zz2 .flarr{position:absolute;left:0;top:0;width:760px;height:340px;max-width:none;pointer-events:none;overflow:visible}
+.js .zz2 .cr,.js .zz2 .ah{opacity:0}
+.js .zz2.shown .cr{animation:cpop .75s cubic-bezier(.3,1.5,.5,1) forwards}
+.js .zz2.shown .cr:nth-child(1){animation-delay:.05s}
+.js .zz2.shown .cr:nth-child(2){animation-delay:.35s}
+.js .zz2.shown .cr:nth-child(3){animation-delay:.65s}
+.js .zz2.shown .cr:nth-child(4){animation-delay:.95s}
+.js .zz2 .ap{stroke-dasharray:1;stroke-dashoffset:1}
+.js .zz2.shown .ap{animation:draw .8s ease forwards}
+.js .zz2.shown .ap:nth-of-type(1){animation-delay:.5s}
+.js .zz2.shown .ap:nth-of-type(2){animation-delay:.8s}
+.js .zz2.shown .ap:nth-of-type(3){animation-delay:1.1s}
+.js .zz2.shown .ah{animation:fadein .35s ease forwards}
+.js .zz2.shown .ah:nth-of-type(1){animation-delay:1.1s}
+.js .zz2.shown .ah:nth-of-type(2){animation-delay:1.4s}
+.js .zz2.shown .ah:nth-of-type(3){animation-delay:1.7s}
+@keyframes cpop{0%{opacity:0;transform:scale(.5)}100%{opacity:1;transform:scale(1)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadein{to{opacity:1}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.js .bub2,.js .bub3{animation:bob 4.2s ease-in-out infinite}
+.js .fcards .fc:nth-child(2){transition-delay:.15s}
+.js .fcards .fc:nth-child(3){transition-delay:.3s}
+.js .ncs2 .nc2:nth-child(2){transition-delay:.15s}
+@media(max-width:760px){.zz2{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:18px;justify-items:center}.zz2 .cr{position:static}.zz2 .flarr{display:none}}
+@media(prefers-reduced-motion:reduce){.js .zz2 .cr,.js .zz2 .ah{opacity:1;transform:none;animation:none}.js .zz2 .ap{stroke-dasharray:none;stroke-dashoffset:0;animation:none}.js .bub2,.js .bub3{animation:none}}
 </style></head><body>
-<div class="note">見本です。事業所名・住所・人物・数字・文章は架空で、実在の事業所とは関係ありません。写真は契約後、お客様の写真に差し替わります。</div>
-<header class="top"><div class="in"><a class="brand" href="/visiting-nurse-demo/shoni/"><svg class="mk" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#ffd25e"/><circle cx="24" cy="24" r="15" fill="#e0573f"/><path d="M24 33 C14 26 15 18 20 18 C22 18 23.3 19 24 20.5 C24.7 19 26 18 28 18 C33 18 34 26 24 33 Z" fill="#fff"/></svg><span>ぽかぽか訪問看護ステーション<small>小児専門の訪問看護</small></span></a><nav class="gnav"><a href="/visiting-nurse-demo/shoni/service/">訪問でできること</a><a href="/visiting-nurse-demo/shoni/growth/">成長・発達</a><a href="/visiting-nurse-demo/shoni/flow/">ご利用の流れ</a><a href="/visiting-nurse-demo/shoni/price/">費用と助成</a><a href="/visiting-nurse-demo/shoni/partner/">医療機関の方へ</a></nav><div class="hr"><span class="bdg">24時間 緊急連絡（契約した方）</span><a class="pill" href="/visiting-nurse-demo/shoni/contact/#form">お問い合わせ</a><button class="menubtn" data-menu type="button">MENU</button></div></div></header>
-<div class="ov" id="ov"><div class="in"><button class="menubtn" data-menu type="button" style="display:inline-block">CLOSE</button><ul><li><a href="/visiting-nurse-demo/shoni/">ホーム</a></li><li><a href="/visiting-nurse-demo/shoni/service/">訪問でできること</a></li><li><a href="/visiting-nurse-demo/shoni/growth/">成長・発達のサポート</a></li><li><a href="/visiting-nurse-demo/shoni/flow/">ご利用の流れ</a></li><li><a href="/visiting-nurse-demo/shoni/price/">費用と助成</a></li><li><a href="/visiting-nurse-demo/shoni/faq/">よくある質問</a></li><li><a href="/visiting-nurse-demo/shoni/partner/">医療機関・学校・保育園の方へ</a></li><li><a href="/visiting-nurse-demo/shoni/team/">スタッフと1日の流れ</a></li><li><a href="/visiting-nurse-demo/shoni/recruit/">採用情報</a></li><li><a href="/visiting-nurse-demo/shoni/apply/">応募・見学フォーム</a></li><li><a href="/visiting-nurse-demo/shoni/blog/">お知らせ・コラム</a></li><li><a href="/visiting-nurse-demo/shoni/company/">事業所概要</a></li><li><a href="/visiting-nurse-demo/shoni/important/">重要事項（掲示事項）</a></li><li><a href="/visiting-nurse-demo/shoni/access/">アクセス</a></li><li><a href="/visiting-nurse-demo/shoni/contact/">お問い合わせ</a></li><li><a href="/visiting-nurse-demo/shoni/privacy/">プライバシーポリシー</a></li></ul><div class="tl">000-0000-0002</div><p style="font-size:13px;color:#76655a;margin-top:6px">平日 9:00〜18:00</p></div></div>
-<main><div class="ptitle"><div class="wrap"><div class="head rv"><div class="crumb"><a href="/visiting-nurse-demo/shoni/">ホーム</a>　＞　応募・見学フォーム</div><h1>応募・見学フォーム</h1><p class="answer">ぽかぽか訪問看護ステーション（サンプル県サンプル市）の採用の応募と、見学の申し込みを受け付けています。募集している職種は、看護師・リハビリ職・医療事務です。（見本）</p></div></div></div><svg class="wv" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true" style="height:50px"><path d="M0 30 C 200 60, 360 0, 600 30 S 1000 60, 1200 30 V0 H0 Z" fill="#ffeaa8"/></svg><section class="sec " id="form"><div class="wrap"><div class="sh rv"><span class="en">FORM</span><h2>応募・見学を申し込む</h2></div><p style="margin-bottom:18px;color:var(--sub)">ご利用・ご依頼のご相談は、<a href="/visiting-nurse-demo/shoni/contact/#form">お問い合わせのフォーム</a>をお使いください。（このフォームは、採用の応募・見学の専用です）</p><form onsubmit="alert('見本のため、送信されません');return false"><label>応募する職種</label><select><option>看護師（常勤）</option><option>看護師（パート）</option><option>リハビリ職（PT・OT・ST）（常勤）</option><option>医療事務（常勤・パート）</option><option>見学だけ希望する</option></select><label>お名前</label><input required><label>ご連絡先（電話またはメール）</label><input required><label>希望の勤務形態</label><select><option>常勤</option><option>パート</option><option>相談したい</option></select><label>見学の希望日（任意）</label><input placeholder="例：11月20日の午後"><label>保有資格・経験（任意）</label><textarea rows="3"></textarea><label>質問など（任意）</label><textarea rows="3"></textarea><p style="font-size:13px;color:var(--sub);margin-top:14px">いただいた内容は、採用の選考と連絡にだけ使います。本籍、家族の職業、思想・信条など、選考に関係のない事項は、お尋ねしません。</p><label style="display:flex;gap:10px;align-items:flex-start;font-weight:400;margin:18px 0 4px"><input type="checkbox" required style="width:auto;max-width:none;margin-top:8px"><span>採用の選考のための、<a href="/visiting-nurse-demo/shoni/privacy/">個人情報の取り扱い</a>に同意します（必須）</span></label><button class="pill" style="margin-top:12px">送信する（見本）</button></form></div></section><p class="wrap upd">最終更新日：2026年11月12日</p></main>
-<footer><svg class="wv" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true" style="height:50px"><path d="M0 30 C 200 0, 360 60, 600 30 S 1000 0, 1200 30 V60 H0 Z" fill="#cdebdc"/></svg><div class="wrap"><div class="cols"><div><p class="fh" style="font-size:18px">ぽかぽか訪問看護ステーション</p><p style="font-size:14.5px">〒000-0000 サンプル県サンプル市見本区例町7-8-9 サンプルビル2階<br>電話：000-0000-0002（平日 9:00〜18:00）<br>対応エリア：サンプル市・見本区・例町</p><p style="margin-top:12px"><a class="pill" href="/visiting-nurse-demo/shoni/contact/#form" style="display:inline-block;color:#fff">お問い合わせ</a></p></div><div><p class="fh">ご家族の方</p><a href="/visiting-nurse-demo/shoni/service/">訪問でできること</a><a href="/visiting-nurse-demo/shoni/growth/">成長・発達のサポート</a><a href="/visiting-nurse-demo/shoni/flow/">ご利用の流れ</a><a href="/visiting-nurse-demo/shoni/price/">費用と助成</a><a href="/visiting-nurse-demo/shoni/faq/">よくある質問</a></div><div><p class="fh">医療機関・学校・保育園の方</p><a href="/visiting-nurse-demo/shoni/partner/">依頼のご案内</a><a href="/visiting-nurse-demo/shoni/contact/">ご依頼・ご相談</a></div><div><p class="fh">ぽかぽかについて</p><a href="/visiting-nurse-demo/shoni/team/">スタッフと1日の流れ</a><a href="/visiting-nurse-demo/shoni/recruit/">採用情報</a><a href="/visiting-nurse-demo/shoni/apply/">応募・見学フォーム</a><a href="/visiting-nurse-demo/shoni/blog/">お知らせ・コラム</a><a href="/visiting-nurse-demo/shoni/company/">事業所概要</a><a href="/visiting-nurse-demo/shoni/important/">重要事項（掲示事項）</a></div></div><div class="cols" style="padding-top:0"><div></div><div><a href="/visiting-nurse-demo/shoni/access/">アクセス</a><a href="/visiting-nurse-demo/shoni/contact/">お問い合わせ</a><a href="/visiting-nurse-demo/shoni/privacy/">プライバシーポリシー</a></div></div><div class="bot">見本です。事業所名・住所・人物・数字・文章は架空で、実在の事業所とは関係ありません。写真は契約後、お客様の写真に差し替わります。</div></div></footer>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="hc" clipPathUnits="objectBoundingBox"><path d="M0.16 0 L1 0 L1 0.9 C0.85 0.98 0.7 0.9 0.55 0.94 C0.4 0.99 0.3 0.93 0.25 0.85 C0.18 0.75 0.02 0.7 0.01 0.5 C0 0.35 0.12 0.28 0.1 0.15 C0.09 0.07 0.12 0.02 0.16 0 Z"/></clipPath></defs></svg><div class="note">見本です。事業所名・住所・人物・数字・文章は架空で、実在の事業所とは関係ありません。写真は契約後、お客様の写真に差し替わります。</div>
+<div class="page">
+<header class="top"><div class="in"><a class="brand" href="/visiting-nurse-demo/shoni/"><svg class="mk" viewBox="0 0 60 56" aria-hidden="true"><path d="M5 27 L30 6 L55 27" fill="none" stroke="#e0573f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 26 V50 H49 V26 L30 10 Z" fill="#fff4dc" stroke="#e8c98a" stroke-width="2"/><circle cx="30" cy="33" r="10" fill="#ffd25e"/><path d="M30 40 C22 34 23 27 27 27 C28.7 27 29.6 28 30 29 C30.4 28 31.3 27 33 27 C37 27 38 34 30 40 Z" fill="#e0573f"/></svg><span class="bn">ぽかぽか<small>訪問看護ステーション</small></span></a><nav class="gnav"><a href="/visiting-nurse-demo/shoni/service/">サービスについて</a><a href="/visiting-nurse-demo/shoni/flow/">ご利用の流れ</a><a href="/visiting-nurse-demo/shoni/faq/">よくある質問</a><a href="/visiting-nurse-demo/shoni/partner/">医療機関の方へ</a><a href="/visiting-nurse-demo/shoni/school/">学校・保育園の方へ</a><a href="/visiting-nurse-demo/shoni/recruit/">採用情報</a></nav><div class="hr"><a class="cta2" href="/visiting-nurse-demo/shoni/contact/#form">お問い合わせ<i>24時間<br>緊急連絡</i></a><button class="menubtn" data-menu type="button">MENU</button></div></div></header>
+<main><div class="ptitle"><div class="wrap"><div class="head rv"><div class="crumb"><a href="/visiting-nurse-demo/shoni/">ホーム</a>　＞　応募・見学フォーム</div><h1>応募・見学フォーム</h1><p class="answer">ぽかぽか訪問看護ステーション（サンプル県サンプル市）の採用の応募と、見学の申し込みを受け付けています。募集している職種は、看護師・リハビリ職・医療事務です。（見本）</p></div></div><svg class="bgl" style="left:0;top:0;width:300px;height:110px" viewBox="0 0 360 150" preserveAspectRatio="xMinYMin meet" aria-hidden="true"><path d="M0 0 H360 C300 30 250 10 210 60 C170 110 90 96 0 138 Z" fill="#cfe6f2"/><g fill="#fff"><ellipse cx="58" cy="78" rx="40" ry="17"/><ellipse cx="92" cy="62" rx="28" ry="20"/><ellipse cx="124" cy="82" rx="30" ry="15"/></g></svg></div><svg class="wv" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true" style="height:50px"><path d="M0 30 C 200 60, 360 0, 600 30 S 1000 60, 1200 30 V0 H0 Z" fill="#ffeaa8"/></svg><section class="sec " id="form"><div class="wrap"><div class="sh rv"><span class="en">FORM</span><h2>応募・見学を申し込む</h2></div><p style="margin-bottom:18px;color:var(--sub)">ご利用・ご依頼のご相談は、<a href="/visiting-nurse-demo/shoni/contact/#form">お問い合わせのフォーム</a>をお使いください。（このフォームは、採用の応募・見学の専用です）</p><form onsubmit="alert('見本のため、送信されません');return false"><label>応募する職種</label><select><option>看護師（常勤）</option><option>看護師（パート）</option><option>リハビリ職（PT・OT・ST）（常勤）</option><option>医療事務（常勤・パート）</option><option>見学だけ希望する</option></select><label>お名前</label><input required><label>ご連絡先（電話またはメール）</label><input required><label>希望の勤務形態</label><select><option>常勤</option><option>パート</option><option>相談したい</option></select><label>見学の希望日（任意）</label><input placeholder="例：11月20日の午後"><label>保有資格・経験（任意）</label><textarea rows="3"></textarea><label>質問など（任意）</label><textarea rows="3"></textarea><p style="font-size:13px;color:var(--sub);margin-top:14px">いただいた内容は、採用の選考と連絡にだけ使います。本籍、家族の職業、思想・信条など、選考に関係のない事項は、お尋ねしません。</p><label style="display:flex;gap:10px;align-items:flex-start;font-weight:400;margin:18px 0 4px"><input type="checkbox" required style="width:auto;max-width:none;margin-top:8px"><span>採用の選考のための、<a href="/visiting-nurse-demo/shoni/privacy/">個人情報の取り扱い</a>に同意します（必須）</span></label><button class="pill" style="margin-top:12px">送信する（見本）</button></form></div></section><p class="wrap upd">最終更新日：2026年11月12日</p></main>
+<footer><svg class="hill" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true" style="height:90px"><path d="M0 50 C 160 10, 320 70, 520 40 S 880 0, 1200 40 V90 H0 Z" fill="#e4f4ea"/><path d="M0 70 C 200 40, 380 90, 600 62 S 1000 30, 1200 66 V90 H0 Z" fill="#cfe9d8"/></svg><div class="fbody"><div class="wrap"><p class="fname">ぽかぽか訪問看護ステーション</p><div class="frow"><div class="lg2"><a class="brand" href="/visiting-nurse-demo/shoni/"><svg class="mk" viewBox="0 0 60 56" aria-hidden="true"><path d="M5 27 L30 6 L55 27" fill="none" stroke="#e0573f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 26 V50 H49 V26 L30 10 Z" fill="#fff4dc" stroke="#e8c98a" stroke-width="2"/><circle cx="30" cy="33" r="10" fill="#ffd25e"/><path d="M30 40 C22 34 23 27 27 27 C28.7 27 29.6 28 30 29 C30.4 28 31.3 27 33 27 C37 27 38 34 30 40 Z" fill="#e0573f"/></svg><span class="bn">ぽかぽか<small>訪問看護ステーション</small></span></a></div><div class="ad">〒000-0000 サンプル県サンプル市見本区例町7-8-9 サンプルビル2階<br>対応エリア：サンプル市・見本区・例町<br>平日 9:00〜18:00（土日祝は休み）</div><a class="tel" href="tel:000-0000-0002">☎ 000-0000-0002</a><a class="pill" href="/visiting-nurse-demo/shoni/contact/#form">ご相談はこちら　›</a></div><div class="cols"><div><p class="fh">ご家族の方</p><a href="/visiting-nurse-demo/shoni/service/">サービスについて</a><a href="/visiting-nurse-demo/shoni/growth/">成長・発達のサポート</a><a href="/visiting-nurse-demo/shoni/flow/">ご利用の流れ</a><a href="/visiting-nurse-demo/shoni/price/">費用と助成</a><a href="/visiting-nurse-demo/shoni/faq/">よくある質問</a></div><div><p class="fh">医療機関・相談支援の方</p><a href="/visiting-nurse-demo/shoni/partner/">依頼のご案内</a><a href="/visiting-nurse-demo/shoni/contact/">ご依頼・ご相談</a></div><div><p class="fh">学校・保育園の方</p><a href="/visiting-nurse-demo/shoni/school/">連携のご案内</a></div><div><p class="fh">ぽかぽかについて</p><a href="/visiting-nurse-demo/shoni/team/">スタッフ紹介</a><a href="/visiting-nurse-demo/shoni/recruit/">採用情報</a><a href="/visiting-nurse-demo/shoni/apply/">応募・見学フォーム</a><a href="/visiting-nurse-demo/shoni/blog/">お知らせ・コラム</a><a href="/visiting-nurse-demo/shoni/company/">事業所概要</a><a href="/visiting-nurse-demo/shoni/important/">重要事項（掲示事項）</a><a href="/visiting-nurse-demo/shoni/privacy/">プライバシーポリシー</a></div></div><div class="bot">Copyright © 2025 Pokapoka. All rights reserved.<br>見本です。事業所名・住所・人物・数字・文章は架空で、実在の事業所とは関係ありません。写真は契約後、お客様の写真に差し替わります。</div></div></div></footer></div>
+<div class="ov" id="ov"><div class="in"><button class="menubtn" data-menu type="button" style="display:inline-block">CLOSE</button><ul><li><a href="/visiting-nurse-demo/shoni/">ホーム</a></li><li><a href="/visiting-nurse-demo/shoni/service/">訪問でできること</a></li><li><a href="/visiting-nurse-demo/shoni/growth/">成長・発達のサポート</a></li><li><a href="/visiting-nurse-demo/shoni/flow/">ご利用の流れ</a></li><li><a href="/visiting-nurse-demo/shoni/price/">費用と助成</a></li><li><a href="/visiting-nurse-demo/shoni/faq/">よくある質問</a></li><li><a href="/visiting-nurse-demo/shoni/partner/">医療機関・相談支援の方へ</a></li><li><a href="/visiting-nurse-demo/shoni/school/">学校・保育園の方へ</a></li><li><a href="/visiting-nurse-demo/shoni/team/">スタッフと1日の流れ</a></li><li><a href="/visiting-nurse-demo/shoni/recruit/">採用情報</a></li><li><a href="/visiting-nurse-demo/shoni/apply/">応募・見学フォーム</a></li><li><a href="/visiting-nurse-demo/shoni/blog/">お知らせ・コラム</a></li><li><a href="/visiting-nurse-demo/shoni/company/">事業所概要</a></li><li><a href="/visiting-nurse-demo/shoni/important/">重要事項（掲示事項）</a></li><li><a href="/visiting-nurse-demo/shoni/access/">アクセス</a></li><li><a href="/visiting-nurse-demo/shoni/contact/">お問い合わせ</a></li><li><a href="/visiting-nurse-demo/shoni/privacy/">プライバシーポリシー</a></li></ul><div class="tl">000-0000-0002</div><p style="font-size:13px;color:#76655a;margin-top:6px">平日 9:00〜18:00</p></div></div>
 <div class="sbar"><a href="/visiting-nurse-demo/shoni/contact/#form">フォームで相談</a><a href="tel:000-0000-0002">電話する</a></div><script>
 document.documentElement.classList.add('js');
 var ov=document.getElementById('ov');
